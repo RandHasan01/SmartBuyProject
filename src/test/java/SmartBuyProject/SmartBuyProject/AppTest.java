@@ -2,12 +2,14 @@ package SmartBuyProject.SmartBuyProject;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -41,8 +43,8 @@ public class AppTest {
 
 	}
 
-	@Test(priority = 2, enabled = false)
-	public void VerifyCategoryNavigation() {
+	@Test(priority = 2, enabled = true)
+	public void VerifyCategoryNavigation() throws InterruptedException {
 
 		WebElement shopByCategory = driver.findElement(By.linkText("Shop by Category"));
 		shopByCategory.click();
@@ -50,20 +52,23 @@ public class AppTest {
 		WebElement shopByCategoryItem = driver.findElement(By.cssSelector(".nav-bar__item.is-dropdown-open"));
 
 		List<WebElement> Categories = shopByCategoryItem.findElement(By.id("desktop-menu-0-2"))
-				.findElements(By.className("nav-dropdown__item"));
+				.findElements(By.cssSelector("#desktop-menu-0-2 > li > a.nav-dropdown__link.link"));
 
 		int randomIndexCategory = rand.nextInt(Categories.size());
 		WebElement selectedCategory = Categories.get(randomIndexCategory);
-		selectedCategory.click();
+		System.out.println("@@@@@@Categories.size@@@@@@@@" + Categories.size());
+		String selectedCategoryText = selectedCategory.getText();
+		Actions actions = new Actions(driver);
+		actions.doubleClick(selectedCategory).perform();
 
-		String classValue = selectedCategory.getAttribute("class");
-		if (classValue.contains("is-dropdown-open")) {
-			selectedCategory.click();
-		}
-
+		WebElement catergoyName = driver.findElement(By.className("collection__meta"));
+		System.out.println(catergoyName.getText());
+		boolean actualCategoryNavigation = catergoyName.getText().equals(selectedCategoryText);
+		Assert.assertEquals(actualCategoryNavigation, true);
+		Thread.sleep(2000);
 	}
 
-	@Test(priority = 3, enabled = false)
+	@Test(priority = 3, enabled = true)
 	public void VerifySearchResultsAccuracy() {
 		WebElement searchField = driver.findElement(By.className("search-bar__input"));
 		searchField.sendKeys("iPhone 15");
@@ -72,7 +77,7 @@ public class AppTest {
 		searchButton.click();
 
 		List<WebElement> resultOfSearch = driver.findElements(By.className("product-item__title"));
-		System.out.println(resultOfSearch.size());
+		System.out.println("@@@@@@@@resultOfSearchSize" + resultOfSearch.size());
 		for (int i = 0; i < resultOfSearch.size(); i++) {
 			System.out.println(resultOfSearch.get(i).getText());
 			Assert.assertEquals(resultOfSearch.get(i).getText().toLowerCase().contains("iphone 15"), true);
