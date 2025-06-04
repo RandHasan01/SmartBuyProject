@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="1" total="10" passed="9" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-06-03T23:28:46 GMT+03:00" name="Default suite" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="9649">
+    <groups>
+    </groups>
+    <test started-at="2025-06-03T23:28:46 GMT+03:00" name="Default test" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="9649">
+      <class name="SmartBuyProject.SmartBuyProject.AppTest">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:46 GMT+03:00" name="mySetup" finished-at="2025-06-03T23:28:53 GMT+03:00" duration-ms="6935" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- mySetup -->
+        <test-method signature="VerifyHomepageLoadsSuccessfully()[pri:1, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:54 GMT+03:00" name="VerifyHomepageLoadsSuccessfully" finished-at="2025-06-03T23:28:54 GMT+03:00" duration-ms="206" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyHomepageLoadsSuccessfully -->
+        <test-method signature="VerifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:54 GMT+03:00" name="VerifyCategoryNavigation" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="2318" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCategoryNavigation -->
+        <test-method signature="test4()[pri:4, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test4" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test4 -->
+        <test-method signature="test5()[pri:5, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test5" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="5" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test5 -->
+        <test-method signature="test6()[pri:6, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test6" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test6 -->
+        <test-method signature="test7()[pri:7, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test7" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test7 -->
+        <test-method signature="test8()[pri:8, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test8" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test8 -->
+        <test-method signature="test9()[pri:9, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test9" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test9 -->
+        <test-method signature="test10()[pri:10, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="test10" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="8" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test10 -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@7e276594]" started-at="2025-06-03T23:28:56 GMT+03:00" name="endTest" finished-at="2025-06-03T23:28:56 GMT+03:00" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endTest -->
+      </class> <!-- SmartBuyProject.SmartBuyProject.AppTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
