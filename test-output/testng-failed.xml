@@ -5,8 +5,8 @@
     <classes>
       <class name="SmartBuyProject.SmartBuyProject.AppTest">
         <methods>
-          <include name="VerifyCategoryNavigation"/>
           <include name="endTest"/>
+          <include name="addToTheCart"/>
           <include name="mySetup"/>
         </methods>
       </class> <!-- SmartBuyProject.SmartBuyProject.AppTest -->

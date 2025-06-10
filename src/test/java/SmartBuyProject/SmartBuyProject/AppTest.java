@@ -58,10 +58,11 @@ public class AppTest {
 		WebElement selectedCategory = Categories.get(randomIndexCategory);
 		System.out.println("@@@@@@Categories.size@@@@@@@@" + Categories.size());
 		String selectedCategoryText = selectedCategory.getText();
+		System.out.println("@@@@@@@" + selectedCategoryText);
 		Actions actions = new Actions(driver);
 		actions.doubleClick(selectedCategory).perform();
-
-		WebElement catergoyName = driver.findElement(By.className("collection__meta"));
+//		Thread.sleep(2000);
+		WebElement catergoyName = driver.findElement(By.className("collection__title"));//
 		System.out.println(catergoyName.getText());
 		boolean actualCategoryNavigation = catergoyName.getText().equals(selectedCategoryText);
 		Assert.assertEquals(actualCategoryNavigation, true);
@@ -85,13 +86,36 @@ public class AppTest {
 
 	}
 
-	@Test(priority = 4)
-	public void test4() {
-
+	@Test(priority = 4, enabled = true)
+	public void productDetailPageAccuracy() {
+		List<WebElement> resultOfSearch = driver.findElements(By.className("product-item__title"));
+		int randomIndexProduct = rand.nextInt(resultOfSearch.size());
+//		WebElement firstProduct = driver.findElement(By.cssSelector(".product-item__title.text--strong.link"));
+		resultOfSearch.get(randomIndexProduct).click();
+		WebElement productName = driver.findElement(By.className("product-meta__title"));
+		Assert.assertEquals(productName.isDisplayed(), true);
+		WebElement productImg = driver.findElement(By.cssSelector(".product-gallery__carousel-item.is-selected"));
+		Assert.assertEquals(productImg.isDisplayed(), true);
+		WebElement productPrice = driver.findElement(By.className("price"));
+		Assert.assertEquals(productPrice.isDisplayed(), true);
+		String productAddButton = driver.findElement(By.className("product-form__add-button")).getText();
+		Assert.assertEquals(productAddButton.contains("Add to cart") || productAddButton.contains("Sold out"), true);
+		WebElement addToWishlistButton = driver.findElement(By.id("vitals-wishlist"));
+		Assert.assertEquals(addToWishlistButton.isDisplayed(), true);
 	}
 
 	@Test(priority = 5)
-	public void test5() {
+	public void addToTheCart() throws InterruptedException {
+		int randomClick = rand.nextInt(6);
+		WebElement productAddButton = driver.findElement(By.className("product-form__add-button"));
+		for (int i = 0; i < randomClick; i++) {
+			productAddButton.click();
+			Thread.sleep(2000);
+
+		}
+
+		String cartCount = driver.findElement(By.className("header__cart-count")).getText();
+		Assert.assertEquals(Integer.toString(randomClick), cartCount);
 
 	}
 
