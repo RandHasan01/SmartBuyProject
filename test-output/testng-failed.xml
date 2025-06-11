@@ -6,7 +6,7 @@
       <class name="SmartBuyProject.SmartBuyProject.AppTest">
         <methods>
           <include name="endTest"/>
-          <include name="addToTheCart"/>
+          <include name="ShoppingCartReview"/>
           <include name="mySetup"/>
         </methods>
       </class> <!-- SmartBuyProject.SmartBuyProject.AppTest -->

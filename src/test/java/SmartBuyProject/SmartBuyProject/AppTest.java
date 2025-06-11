@@ -6,6 +6,8 @@ import java.util.NoSuchElementException;
 import java.util.Random;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,7 +24,10 @@ public class AppTest {
 	WebDriver driver = new ChromeDriver();
 	String SmartBuyURL = "https://smartbuy-me.com/";
 	Random rand = new Random();
-	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	String PublicProductName;
+	String PublicProductPrice;
+	String PublicProductQuantities;
 
 	@BeforeTest
 	public void mySetup() {
@@ -54,17 +59,22 @@ public class AppTest {
 		List<WebElement> Categories = shopByCategoryItem.findElement(By.id("desktop-menu-0-2"))
 				.findElements(By.cssSelector("#desktop-menu-0-2 > li > a.nav-dropdown__link.link"));
 
+		for (int i = 0; i < Categories.size(); i++) {
+			System.out.println(Categories.get(i).getText());
+		}
 		int randomIndexCategory = rand.nextInt(Categories.size());
 		WebElement selectedCategory = Categories.get(randomIndexCategory);
 		System.out.println("@@@@@@Categories.size@@@@@@@@" + Categories.size());
-		String selectedCategoryText = selectedCategory.getText();
-		System.out.println("@@@@@@@" + selectedCategoryText);
+		String selectedCategoryText = selectedCategory.getText().toLowerCase();
+		System.out.println("@@@@@@@" + selectedCategoryText);// BUILT-IN
 		Actions actions = new Actions(driver);
 		actions.doubleClick(selectedCategory).perform();
-//		Thread.sleep(2000);
-		WebElement catergoyName = driver.findElement(By.className("collection__title"));//
-		System.out.println(catergoyName.getText());
-		boolean actualCategoryNavigation = catergoyName.getText().equals(selectedCategoryText);
+		Thread.sleep(2000);
+
+		WebElement categoryName = wait
+				.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(".heading.h1")));
+		System.out.println(categoryName.getText());// Built-In
+		boolean actualCategoryNavigation = categoryName.getText().toLowerCase().contains(selectedCategoryText);
 		Assert.assertEquals(actualCategoryNavigation, true);
 		Thread.sleep(2000);
 	}
@@ -90,13 +100,16 @@ public class AppTest {
 	public void productDetailPageAccuracy() {
 		List<WebElement> resultOfSearch = driver.findElements(By.className("product-item__title"));
 		int randomIndexProduct = rand.nextInt(resultOfSearch.size());
-//		WebElement firstProduct = driver.findElement(By.cssSelector(".product-item__title.text--strong.link"));
 		resultOfSearch.get(randomIndexProduct).click();
 		WebElement productName = driver.findElement(By.className("product-meta__title"));
+		PublicProductName = productName.getText();
 		Assert.assertEquals(productName.isDisplayed(), true);
 		WebElement productImg = driver.findElement(By.cssSelector(".product-gallery__carousel-item.is-selected"));
 		Assert.assertEquals(productImg.isDisplayed(), true);
 		WebElement productPrice = driver.findElement(By.className("price"));
+		PublicProductPrice = productPrice.getText();
+		System.out.println(PublicProductPrice + "@@@");
+
 		Assert.assertEquals(productPrice.isDisplayed(), true);
 		String productAddButton = driver.findElement(By.className("product-form__add-button")).getText();
 		Assert.assertEquals(productAddButton.contains("Add to cart") || productAddButton.contains("Sold out"), true);
@@ -106,27 +119,50 @@ public class AppTest {
 
 	@Test(priority = 5)
 	public void addToTheCart() throws InterruptedException {
-		int randomClick = rand.nextInt(6);
-		WebElement productAddButton = driver.findElement(By.className("product-form__add-button"));
-		for (int i = 0; i < randomClick; i++) {
+//		driver.navigate().back();
+		int randomQuantities = rand.nextInt(1, 4);
+		PublicProductQuantities = Integer.toString(randomQuantities);
+		System.out.println(PublicProductQuantities + "!!!!!!!!");
+		for (int i = 0; i < randomQuantities; i++) {
+			WebElement productAddButton = driver.findElement(By.className("product-form__add-button"));
+
 			productAddButton.click();
 			Thread.sleep(2000);
 
 		}
-
+		Thread.sleep(2000);
 		String cartCount = driver.findElement(By.className("header__cart-count")).getText();
-		Assert.assertEquals(Integer.toString(randomClick), cartCount);
+		Assert.assertEquals(Integer.toString(randomQuantities), cartCount);
 
 	}
 
 	@Test(priority = 6)
-	public void test6() {
+	public void ShoppingCartReview() throws InterruptedException {
+
+		WebElement cartButton = driver.findElement(By.className("header__cart-toggle"));
+		cartButton.click();
+		Thread.sleep(2000);
+		WebElement viewCartButton = driver.findElement(By.cssSelector(".button.button--secondary"));
+		viewCartButton.click();
+
+		String productNameInTheCart = driver.findElement(By.className("line-item__title")).getText();
+		String productPriceInTheCart = driver.findElements(By.cssSelector(".line-item__price")).get(0).getText();
+		String productQuantityInTheCart = driver.findElement(By.className("quantity-selector__value"))
+				.getDomAttribute("value");
+		System.out.println(productQuantityInTheCart + "!!!!!!!");
+		System.out.println(productPriceInTheCart + "@@@@");
+
+		Assert.assertTrue(productNameInTheCart.contains(PublicProductName), "have a differance product name");
+		Assert.assertTrue(PublicProductPrice.contains(productPriceInTheCart), "have a differance product price");
+		Assert.assertTrue(productQuantityInTheCart.equals(PublicProductQuantities),
+				"have a differance product quantity");
 
 	}
 
-	@Test(priority = 7)
-	public void test7() {
-
+	@Test(priority = 7, enabled = false)
+	public void UpdateCartQuantities() {
+		WebElement quantitiyField = driver.findElement(By.xpath("//input[@aria-label='Quantity']"));
+		System.out.println(quantitiyField.getText());
 	}
 
 	@Test(priority = 8)
@@ -135,13 +171,24 @@ public class AppTest {
 	}
 
 	@Test(priority = 9)
-	public void test9() {
+	public void PromotionsPageAccessibility() {
 
+		WebElement promotions = driver.findElement(By.linkText("Promotions"));
+		promotions.click();
+
+		List<WebElement> discountLables = driver.findElements(By.className("product-label"));
+		int randomIndexdiscountLable = rand.nextInt(discountLables.size());
+		boolean discountLable = discountLables.get(randomIndexdiscountLable).isDisplayed();
+		Assert.assertTrue(discountLable);
 	}
 
 	@Test(priority = 10)
-	public void test10() {
-
+	public void ContactInformationAvailability() {
+		WebElement footer = driver.findElement(By.tagName("footer"));
+		String divContactInfo = footer.findElement(By.id("block-footer-0")).getText();
+		System.out.println(divContactInfo);
+		Assert.assertTrue(divContactInfo.contains("+962 (06) 5809999"), "Phone number is not displayed!");
+		Assert.assertTrue(divContactInfo.contains("info@smartbuy.jo"), "Email address is not displayed!");
 	}
 
 	@AfterTest
