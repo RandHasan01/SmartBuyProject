@@ -1,53 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="10" passed="9" failed="0" skipped="0">
+<testng-results ignored="2" total="12" passed="9" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-12T00:06:48 GMT+03:00" name="Default suite" finished-at="2025-06-12T00:07:30 GMT+03:00" duration-ms="41834">
+  <suite started-at="2025-06-12T15:04:12 GMT+03:00" name="Default suite" finished-at="2025-06-12T15:05:08 GMT+03:00" duration-ms="56045">
     <groups>
     </groups>
-    <test started-at="2025-06-12T00:06:48 GMT+03:00" name="Default test" finished-at="2025-06-12T00:07:30 GMT+03:00" duration-ms="41834">
+    <test started-at="2025-06-12T15:04:12 GMT+03:00" name="Default test" finished-at="2025-06-12T15:05:08 GMT+03:00" duration-ms="56045">
       <class name="SmartBuyProject.SmartBuyProject.AppTest">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:06:48 GMT+03:00" name="mySetup" finished-at="2025-06-12T00:07:01 GMT+03:00" duration-ms="13333" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:12 GMT+03:00" name="mySetup" finished-at="2025-06-12T15:04:23 GMT+03:00" duration-ms="10946" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="VerifyHomepageLoadsSuccessfully()[pri:1, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:02 GMT+03:00" name="VerifyHomepageLoadsSuccessfully" finished-at="2025-06-12T00:07:02 GMT+03:00" duration-ms="311" status="PASS">
+        <test-method signature="VerifyHomepageLoadsSuccessfully()[pri:1, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:23 GMT+03:00" name="VerifyHomepageLoadsSuccessfully" finished-at="2025-06-12T15:04:23 GMT+03:00" duration-ms="196" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyHomepageLoadsSuccessfully -->
-        <test-method signature="VerifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:02 GMT+03:00" name="VerifyCategoryNavigation" finished-at="2025-06-12T00:07:11 GMT+03:00" duration-ms="8569" status="PASS">
+        <test-method signature="VerifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:23 GMT+03:00" name="VerifyCategoryNavigation" finished-at="2025-06-12T15:04:31 GMT+03:00" duration-ms="7233" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyCategoryNavigation -->
-        <test-method signature="VerifySearchResultsAccuracy()[pri:3, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:11 GMT+03:00" name="VerifySearchResultsAccuracy" finished-at="2025-06-12T00:07:17 GMT+03:00" duration-ms="5726" status="PASS">
+        <test-method signature="VerifySearchResultsAccuracy()[pri:3, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:31 GMT+03:00" name="VerifySearchResultsAccuracy" finished-at="2025-06-12T15:04:35 GMT+03:00" duration-ms="4485" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifySearchResultsAccuracy -->
-        <test-method signature="productDetailPageAccuracy()[pri:4, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:17 GMT+03:00" name="productDetailPageAccuracy" finished-at="2025-06-12T00:07:19 GMT+03:00" duration-ms="2979" status="PASS">
+        <test-method signature="productDetailPageAccuracy()[pri:4, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:35 GMT+03:00" name="productDetailPageAccuracy" finished-at="2025-06-12T15:04:38 GMT+03:00" duration-ms="2543" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productDetailPageAccuracy -->
-        <test-method signature="addToTheCart()[pri:5, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:19 GMT+03:00" name="addToTheCart" finished-at="2025-06-12T00:07:24 GMT+03:00" duration-ms="4301" status="PASS">
+        <test-method signature="addToTheCart()[pri:5, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:38 GMT+03:00" name="addToTheCart" finished-at="2025-06-12T15:04:50 GMT+03:00" duration-ms="12801" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addToTheCart -->
-        <test-method signature="ShoppingCartReview()[pri:6, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:24 GMT+03:00" name="ShoppingCartReview" finished-at="2025-06-12T00:07:28 GMT+03:00" duration-ms="3908" status="PASS">
+        <test-method signature="ShoppingCartReview()[pri:6, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:50 GMT+03:00" name="ShoppingCartReview" finished-at="2025-06-12T15:04:54 GMT+03:00" duration-ms="4029" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ShoppingCartReview -->
-        <test-method signature="test8()[pri:8, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:28 GMT+03:00" name="test8" finished-at="2025-06-12T00:07:28 GMT+03:00" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- test8 -->
-        <test-method signature="PromotionsPageAccessibility()[pri:9, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:28 GMT+03:00" name="PromotionsPageAccessibility" finished-at="2025-06-12T00:07:30 GMT+03:00" duration-ms="2152" status="PASS">
+        <test-method signature="PromotionsPageAccessibility()[pri:9, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:54 GMT+03:00" name="PromotionsPageAccessibility" finished-at="2025-06-12T15:04:57 GMT+03:00" duration-ms="2271" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- PromotionsPageAccessibility -->
-        <test-method signature="ContactInformationAvailability()[pri:10, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:30 GMT+03:00" name="ContactInformationAvailability" finished-at="2025-06-12T00:07:30 GMT+03:00" duration-ms="84" status="PASS">
+        <test-method signature="ContactInformationAvailability()[pri:10, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:57 GMT+03:00" name="ContactInformationAvailability" finished-at="2025-06-12T15:04:57 GMT+03:00" duration-ms="285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ContactInformationAvailability -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@3401a114]" started-at="2025-06-12T00:07:30 GMT+03:00" name="endTest" finished-at="2025-06-12T00:07:30 GMT+03:00" duration-ms="0" status="PASS">
+        <test-method signature="UserRegistrationProcess()[pri:11, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:04:57 GMT+03:00" name="UserRegistrationProcess" finished-at="2025-06-12T15:05:04 GMT+03:00" duration-ms="6696" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[confirmation Message not appeared expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: confirmation Message not appeared expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at SmartBuyProject.SmartBuyProject.AppTest.UserRegistrationProcess(AppTest.java:237)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserRegistrationProcess -->
+        <test-method signature="UserLoginFunctionality()[pri:12, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:05:04 GMT+03:00" name="UserLoginFunctionality" finished-at="2025-06-12T15:05:08 GMT+03:00" duration-ms="4365" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserLoginFunctionality -->
+        <test-method is-config="true" signature="endTest()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-12T15:05:08 GMT+03:00" name="endTest" finished-at="2025-06-12T15:05:08 GMT+03:00" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- endTest -->

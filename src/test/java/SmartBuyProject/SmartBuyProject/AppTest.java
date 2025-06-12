@@ -28,6 +28,8 @@ public class AppTest {
 	String PublicProductName;
 	String PublicProductPrice;
 	String PublicProductQuantities;
+	String Email;
+	String Password;
 
 	@BeforeTest
 	public void mySetup() {
@@ -35,7 +37,7 @@ public class AppTest {
 		driver.manage().window().maximize();
 	}
 
-	@Test(priority = 1)
+	@Test(priority = 1, enabled = true)
 	public void VerifyHomepageLoadsSuccessfully() {
 		WebElement navigationMenus = driver.findElement(By.className("nav-bar__linklist"));
 		WebElement banners = driver.findElement(By.id("shopify-section-template--23554639757622__slideshow"));
@@ -117,10 +119,10 @@ public class AppTest {
 		Assert.assertEquals(addToWishlistButton.isDisplayed(), true);
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, enabled = true)
 	public void addToTheCart() throws InterruptedException {
 //		driver.navigate().back();
-		int randomQuantities = rand.nextInt(1, 4);
+		int randomQuantities = rand.nextInt(2, 4);
 		PublicProductQuantities = Integer.toString(randomQuantities);
 		System.out.println(PublicProductQuantities + "!!!!!!!!");
 		for (int i = 0; i < randomQuantities; i++) {
@@ -136,7 +138,7 @@ public class AppTest {
 
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled = true)
 	public void ShoppingCartReview() throws InterruptedException {
 
 		WebElement cartButton = driver.findElement(By.className("header__cart-toggle"));
@@ -160,17 +162,29 @@ public class AppTest {
 	}
 
 	@Test(priority = 7, enabled = false)
-	public void UpdateCartQuantities() {
-		WebElement quantitiyField = driver.findElement(By.xpath("//input[@aria-label='Quantity']"));
-		System.out.println(quantitiyField.getText());
+	public void UpdateCartQuantities() throws InterruptedException {
+		driver.navigate().back();
+		WebElement cartButton = driver.findElement(By.className("header__cart-toggle"));
+		cartButton.click();
+		WebElement decreaseButton = driver.findElement(By.xpath("//button[@data-action='decrease-quantity']"));
+		WebElement increaseButton = driver.findElement(By.xpath("//button[@data-action='increase-quantity']"));
+
+		if (rand.nextBoolean()) {
+			decreaseButton.click();
+			System.out.println("Clicked Decrease Button");
+		} else {
+			increaseButton.click();
+			System.out.println("Clicked Increase Button");
+		}
+
 	}
 
-	@Test(priority = 8)
-	public void test8() {
+	@Test(priority = 8, enabled = false)
+	public void RemoveItemsfromCart() {
 
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 9, enabled = true)
 	public void PromotionsPageAccessibility() {
 
 		WebElement promotions = driver.findElement(By.linkText("Promotions"));
@@ -182,13 +196,65 @@ public class AppTest {
 		Assert.assertTrue(discountLable);
 	}
 
-	@Test(priority = 10)
+	@Test(priority = 10, enabled = true)
 	public void ContactInformationAvailability() {
 		WebElement footer = driver.findElement(By.tagName("footer"));
 		String divContactInfo = footer.findElement(By.id("block-footer-0")).getText();
 		System.out.println(divContactInfo);
 		Assert.assertTrue(divContactInfo.contains("+962 (06) 5809999"), "Phone number is not displayed!");
 		Assert.assertTrue(divContactInfo.contains("info@smartbuy.jo"), "Email address is not displayed!");
+	}
+
+	@Test(priority = 11, enabled = true)
+	public void UserRegistrationProcess() {
+		WebElement signupButton = driver
+				.findElement(By.cssSelector(".header__action-item-link.hidden-pocket.hidden-lap"));
+		signupButton.click();
+
+		WebElement creatAccountButton = driver.findElement(By.linkText("Create your account"));
+		creatAccountButton.click();
+
+		WebElement firstNameField = driver.findElement(By.id("customer[first_name]"));
+		String firstName = "rand";
+		firstNameField.sendKeys(firstName);
+		WebElement lasttNameField = driver.findElement(By.id("customer[last_name]"));
+		String lastName = "hasan";
+		lasttNameField.sendKeys(lastName);
+		WebElement emailField = driver.findElement(By.id("customer[email]"));
+		String email = firstName + lastName + "@gmail.com";
+		Email = email;
+		emailField.sendKeys(email);
+		WebElement passwordField = driver.findElement(By.id("customer[password]"));
+		String password = "Rand@123";
+		Password = password;
+		passwordField.sendKeys(password);
+
+		WebElement createMyAccountButton = driver.findElement(By.xpath("//button[text()='Create my account']"));
+		createMyAccountButton.click();
+
+		WebElement confirmationMessage = driver
+				.findElement(By.cssSelector(".header__action-item-title.hidden-pocket.hidden-lap"));
+		Assert.assertTrue(confirmationMessage.getText().contains("Hello"), "confirmation Message not appeared");
+	}
+
+	@Test(priority = 12, enabled = true)
+	public void UserLoginFunctionality() {
+		WebElement signupButton = driver
+				.findElement(By.cssSelector(".header__action-item-link.hidden-pocket.hidden-lap"));
+		signupButton.click();
+		WebElement emailField = driver.findElement(By.id("customer[email]"));
+		emailField.sendKeys(Email);
+		WebElement passwordField = driver.findElement(By.id("customer[password]"));
+		passwordField.sendKeys(Password);
+		WebElement longinButton = driver.findElement(By.xpath("//button[text()='Login']"));
+		longinButton.click();
+
+		WebElement confirmationMessage = driver
+				.findElement(By.cssSelector(".header__action-item-title.hidden-pocket.hidden-lap"));
+		Assert.assertTrue(confirmationMessage.getText().contains("Hello"), "confirmation Message not appeared");
+
+		Assert.assertTrue(driver.getCurrentUrl().contains("account"));
+
 	}
 
 	@AfterTest
