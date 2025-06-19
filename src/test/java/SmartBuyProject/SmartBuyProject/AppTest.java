@@ -22,13 +22,12 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class AppTest extends TestData {
+
 	public void enterCredentials(String email, String password) {
 		WebElement emailField = driver.findElement(By.id("customer[email]"));
-		emailField.clear();
 		emailField.sendKeys(email);
 
 		WebElement passwordField = driver.findElement(By.id("customer[password]"));
-		passwordField.clear();
 		passwordField.sendKeys(password);
 	}
 
@@ -37,7 +36,7 @@ public class AppTest extends TestData {
 		setup();
 	}
 
-	@Test(priority = 1, enabled = false)
+	@Test(priority = 1, enabled = true)
 	public void verifyHomepageLoadsSuccessfully() {
 		WebElement navigationMenus = driver.findElement(By.className("nav-bar__linklist"));
 		WebElement banners = driver.findElement(By.id("shopify-section-template--23554639757622__slideshow"));
@@ -50,7 +49,7 @@ public class AppTest extends TestData {
 
 	}
 
-	@Test(priority = 2, enabled = false, invocationCount = 5)
+	@Test(priority = 2, enabled = true, invocationCount = 5)
 	public void verifyCategoryNavigation() throws InterruptedException {
 
 		WebElement shopByCategory = driver.findElement(By.linkText("Shop by Category"));
@@ -85,24 +84,25 @@ public class AppTest extends TestData {
 	}
 
 	@Test(priority = 3, enabled = true)
-	public void verifySearchResultsAccuracy() {
+	public void verifySearchResultsAccuracy() throws InterruptedException {
 		WebElement searchField = driver.findElement(By.className("search-bar__input"));
 		searchField.sendKeys("iPhone 15");
-
 		WebElement searchButton = driver.findElement(By.className("search-bar__submit"));
 		searchButton.click();
+		Thread.sleep(2000);
 		WebElement productList = driver.findElement(By.className("product-list"));
-		Assert.assertTrue(productList.isDisplayed());
+		Assert.assertTrue(productList.isDisplayed(), "no products");
 		List<WebElement> productsTitle = productList.findElements(By.className("product-item__title"));
 		System.out.println("resultOfSearchSize :" + productsTitle.size());
 		for (int i = 0; i < productsTitle.size(); i++) {
 			System.out.println("results :" + productsTitle.get(i).getText());
-			Assert.assertEquals(productsTitle.get(i).getText().toLowerCase().contains("iphone 15"), true);
+			Assert.assertEquals(productsTitle.get(i).getText().toLowerCase().contains("iphone 15"), true,
+					"Search result title does not contain 'iPhone 15': " + productsTitle);
 		}
 
 	}
 
-	@Test(priority = 4, enabled = true) //
+	@Test(priority = 4, enabled = true)
 	public void productDetailPageAccuracy() {
 
 		WebElement listOfProduct = driver.findElement(By.cssSelector(".product-list.product-list--collection"));
@@ -112,33 +112,29 @@ public class AppTest extends TestData {
 		WebElement selectedProduct = products.get(randomIndexProduct);
 		WebElement productName = selectedProduct.findElement(By.className("product-item__title"));
 		String productPrice = selectedProduct.findElement(By.className("price")).getText().replaceAll("[^0-9.]", "");
-		String productNameText = productName.getText();
+		String productNameText = productName.getText().toLowerCase();
 		System.out.println(productPrice + productNameText);
 		productName.click();
-		String detailPageProductName = driver.findElement(By.className("product-meta__title")).getText();
+		String detailPageProductName = driver.findElement(By.className("product-meta__title")).getText().toLowerCase();
 		String detailPageProductPrice = driver.findElement(By.className("price")).getText().replaceAll("[^0-9.]", "");
-		System.out.println(detailPageProductName + detailPageProductPrice);
-		
-//		List<WebElement> resultOfSearch = driver.findElements(By.className("product-item__title"));
-//		int randomIndexProduct = rand.nextInt(resultOfSearch.size());
-//		resultOfSearch.get(randomIndexProduct).click();
-//		WebElement productName = driver.findElement(By.className("product-meta__title"));
-//		PublicProductName = productName.getText();
-//		Assert.assertEquals(productName.isDisplayed(), true);
-//		WebElement productImg = driver.findElement(By.cssSelector(".product-gallery__carousel-item.is-selected"));
-//		Assert.assertEquals(productImg.isDisplayed(), true);
-//		WebElement productPrice = driver.findElement(By.className("price"));
-//		PublicProductPrice = productPrice.getText();
-//		System.out.println("PublicProductPrice :"+PublicProductPrice );
-//
-//		Assert.assertEquals(productPrice.isDisplayed(), true);
-//		String productAddButton = driver.findElement(By.className("product-form__add-button")).getText();
-//		Assert.assertEquals(productAddButton.contains("Add to cart") || productAddButton.contains("Sold out"), true);
-//		WebElement addToWishlistButton = driver.findElement(By.id("vitals-wishlist"));
-//		Assert.assertEquals(addToWishlistButton.isDisplayed(), true);
+		System.out.println(detailPageProductPrice + detailPageProductName);
+		String addToCartButton = driver.findElement(By.className("product-form__add-button")).getText();
+		WebElement productImage = driver.findElement(By.cssSelector(".product-gallery__carousel-item.is-selected"));
+		WebElement specifications = driver.findElement(By.xpath("//main[@id='main']//p[2]"));
+		System.out.println("specifications :" + specifications.getText());
+		Assert.assertEquals(productNameText, detailPageProductName, "have a difference product name");
+		Assert.assertEquals(productPrice, detailPageProductPrice, "have a difference product price");
+		Assert.assertTrue(addToCartButton.toLowerCase().contains("add to cart")
+				|| addToCartButton.toLowerCase().contains("sold out"));
+		Assert.assertTrue(productImage.isDisplayed(), "Product image is not displayed!");
+		Assert.assertTrue(specifications.isDisplayed());
+
+		PublicProductName = productNameText;
+		PublicProductPrice = productPrice;
+
 	}
 
-	@Test(priority = 5, enabled = false)
+	@Test(priority = 5, enabled = true)
 	public void addProductToTheCart() throws InterruptedException {
 		int randomQuantities = rand.nextInt(1, 4);
 		PublicProductQuantities = Integer.toString(randomQuantities);
@@ -155,7 +151,7 @@ public class AppTest extends TestData {
 
 	}
 
-	@Test(priority = 6, enabled = false)
+	@Test(priority = 6, enabled = true)
 	public void shoppingCartReview() throws InterruptedException {
 
 		WebElement cartButton = driver.findElement(By.className("header__cart-toggle"));
@@ -164,21 +160,24 @@ public class AppTest extends TestData {
 		WebElement viewCartButton = driver.findElement(By.cssSelector(".button.button--secondary"));
 		viewCartButton.click();
 
-		String productNameInTheCart = driver.findElement(By.className("line-item__title")).getText();
-		String productPriceInTheCart = driver.findElements(By.cssSelector(".line-item__price")).get(0).getText();
+		String productNameInTheCart = driver.findElement(By.className("line-item__title")).getText().toLowerCase();
+		String productPriceInTheCart = driver.findElements(By.cssSelector(".line-item__price")).get(0).getText()
+				.replaceAll("[^0-9.]", "");
 		String productQuantityInTheCart = driver.findElement(By.className("quantity-selector__value"))
 				.getDomAttribute("value");
+		System.out.println("productNameInTheCart :" + productNameInTheCart);
+
 		System.out.println("productQuantityInTheCart :" + productQuantityInTheCart);
 		System.out.println("productPriceInTheCart :" + productPriceInTheCart);
 
 		Assert.assertTrue(productNameInTheCart.contains(PublicProductName), "have a differance product name");
-		Assert.assertTrue(PublicProductPrice.contains(productPriceInTheCart), "have a differance product price");
+		Assert.assertTrue(PublicProductPrice.equals(productPriceInTheCart), "have a differance product price");
 		Assert.assertTrue(productQuantityInTheCart.equals(PublicProductQuantities),
 				"have a differance product quantity");
 
 	}
 
-	@Test(priority = 7, enabled = false)
+	@Test(priority = 7, enabled = true)
 	public void promotionsPageAccessibility() {
 
 		WebElement promotions = driver.findElement(By.linkText("Promotions"));
@@ -195,7 +194,7 @@ public class AppTest extends TestData {
 
 	}
 
-	@Test(priority = 8, enabled = false)
+	@Test(priority = 8, enabled = true)
 	public void contactInformationAvailability() {
 		WebElement footer = driver.findElement(By.tagName("footer"));
 		String divContactInfo = footer.findElement(By.id("block-footer-0")).getText();
@@ -228,7 +227,7 @@ public class AppTest extends TestData {
 				"confirmation Message not appeared");
 	}
 
-	@Test(priority = 10, enabled = false)
+	@Test(priority = 10, enabled = true)
 	public void UserLoginFunctionality() {
 		WebElement signupButton = driver
 				.findElement(By.cssSelector(".header__action-item-link.hidden-pocket.hidden-lap"));
@@ -242,28 +241,29 @@ public class AppTest extends TestData {
 		Assert.assertTrue(confirmationMessage.getText().contains("Hello"), "confirmation Message not appeared");
 
 		WebElement currentPage = driver.findElement(By.cssSelector(".heading.h1"));
-		Assert.assertTrue(currentPage.getText().toLowerCase().contains("my orders"));
+		Assert.assertTrue(currentPage.getText().toLowerCase().contains("my orders"),
+				"the currentPage doesn't contain my orders text");
 
 		WebElement logoutButton = driver.findElement(By.linkText("Logout"));
 		logoutButton.click();
 
 	}
 
-	@Test(priority = 11, enabled = false)
+	@Test(priority = 11, enabled = true)
 	public void InvalidUserLoginFunctionality() {
 		WebElement signupButton = driver
 				.findElement(By.cssSelector(".header__action-item-link.hidden-pocket.hidden-lap"));
 		signupButton.click();
 		enterCredentials(Email, "Rand@1234");
-		WebElement longinButton = driver.findElement(By.xpath("//button[text()='Login']"));
-		longinButton.click();
+		WebElement loginButton = driver.findElement(By.xpath("//button[text()='Login']"));
+		loginButton.click();
 
 		WebElement errorMessage = driver.findElement(By.className("alert"));
-		Assert.assertTrue(errorMessage.isDisplayed());
+		Assert.assertTrue(errorMessage.isDisplayed(), "Error message not displayed after invalid login attempt.");
 
 	}
 
-	@Test(priority = 12, enabled = false)
+	@Test(priority = 12, enabled = true)
 	public void SocialMediaLinks() {
 		WebElement footer = driver.findElement(By.tagName("footer"));
 
@@ -282,6 +282,8 @@ public class AppTest extends TestData {
 		boolean isSmartBuyBrand = currentUrl.contains("smartbuy");
 
 		Assert.assertTrue(isCorrectPlatform && isSmartBuyBrand, "The social media link is incorrect: " + currentUrl);
+		driver.close();
+		driver.switchTo().window(windowList.get(0));
 
 	}
 
