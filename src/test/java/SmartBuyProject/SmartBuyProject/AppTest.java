@@ -97,7 +97,7 @@ public class AppTest extends TestData {
 		for (int i = 0; i < productsTitle.size(); i++) {
 			System.out.println("results :" + productsTitle.get(i).getText());
 			Assert.assertEquals(productsTitle.get(i).getText().toLowerCase().contains("iphone 15"), true,
-					"Search result title does not contain 'iPhone 15': " + productsTitle);
+					"Search result title does not contain 'iPhone 15': " + productsTitle.get(i).getText());
 		}
 
 	}
@@ -288,7 +288,7 @@ public class AppTest extends TestData {
 	}
 
 	@AfterTest
-	public void endTest() {
+	public void tearDown() {
 		driver.close();
 
 	}

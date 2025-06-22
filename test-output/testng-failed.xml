@@ -5,7 +5,7 @@
     <classes>
       <class name="SmartBuyProject.SmartBuyProject.AppTest">
         <methods>
-          <include name="endTest"/>
+          <include name="tearDown"/>
           <include name="verifySearchResultsAccuracy"/>
           <include name="mySetup"/>
         </methods>

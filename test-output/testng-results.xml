@@ -2,46 +2,46 @@
 <testng-results ignored="1" total="16" passed="14" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-19T23:53:47 GMT+03:00" name="Default suite" finished-at="2025-06-19T23:55:08 GMT+03:00" duration-ms="81082">
+  <suite started-at="2025-06-22T14:39:42 GMT+03:00" name="Default suite" finished-at="2025-06-22T14:40:54 GMT+03:00" duration-ms="71540">
     <groups>
     </groups>
-    <test started-at="2025-06-19T23:53:47 GMT+03:00" name="Default test" finished-at="2025-06-19T23:55:08 GMT+03:00" duration-ms="81082">
+    <test started-at="2025-06-22T14:39:42 GMT+03:00" name="Default test" finished-at="2025-06-22T14:40:54 GMT+03:00" duration-ms="71540">
       <class name="SmartBuyProject.SmartBuyProject.AppTest">
-        <test-method is-config="true" signature="mySetup()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:53:47 GMT+03:00" name="mySetup" finished-at="2025-06-19T23:53:54 GMT+03:00" duration-ms="6633" status="PASS">
+        <test-method is-config="true" signature="mySetup()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:39:42 GMT+03:00" name="mySetup" finished-at="2025-06-22T14:39:48 GMT+03:00" duration-ms="5060" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- mySetup -->
-        <test-method signature="verifyHomepageLoadsSuccessfully()[pri:1, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:53:54 GMT+03:00" name="verifyHomepageLoadsSuccessfully" finished-at="2025-06-19T23:53:54 GMT+03:00" duration-ms="215" status="PASS">
+        <test-method signature="verifyHomepageLoadsSuccessfully()[pri:1, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:39:48 GMT+03:00" name="verifyHomepageLoadsSuccessfully" finished-at="2025-06-22T14:39:48 GMT+03:00" duration-ms="340" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyHomepageLoadsSuccessfully -->
-        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:53:54 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-19T23:54:01 GMT+03:00" duration-ms="6825" status="PASS">
+        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:39:48 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-22T14:39:55 GMT+03:00" duration-ms="6845" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCategoryNavigation -->
-        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:01 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-19T23:54:08 GMT+03:00" duration-ms="6883" status="PASS">
+        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:39:55 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-22T14:40:01 GMT+03:00" duration-ms="6116" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCategoryNavigation -->
-        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:08 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-19T23:54:14 GMT+03:00" duration-ms="6510" status="PASS">
+        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:01 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-22T14:40:08 GMT+03:00" duration-ms="7254" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCategoryNavigation -->
-        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:14 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-19T23:54:21 GMT+03:00" duration-ms="6292" status="PASS">
+        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:08 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-22T14:40:16 GMT+03:00" duration-ms="7634" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCategoryNavigation -->
-        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:21 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-19T23:54:27 GMT+03:00" duration-ms="6238" status="PASS">
+        <test-method signature="verifyCategoryNavigation()[pri:2, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:16 GMT+03:00" name="verifyCategoryNavigation" finished-at="2025-06-22T14:40:22 GMT+03:00" duration-ms="6138" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCategoryNavigation -->
-        <test-method signature="verifySearchResultsAccuracy()[pri:3, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:27 GMT+03:00" name="verifySearchResultsAccuracy" finished-at="2025-06-19T23:54:32 GMT+03:00" duration-ms="5088" status="FAIL">
+        <test-method signature="verifySearchResultsAccuracy()[pri:3, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:22 GMT+03:00" name="verifySearchResultsAccuracy" finished-at="2025-06-22T14:40:25 GMT+03:00" duration-ms="2970" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[Search result title does not contain 'iPhone 15': [[[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title]] expected [true] but found [false]]]>
+              <![CDATA[Search result title does not contain 'iPhone 15': Apple iPhone 13,128GB, Starlight expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Search result title does not contain 'iPhone 15': [[[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title], [[[[ChromeDriver: chrome on windows (10647fa113036751b2feb013bf52d293)] -> class name: product-list]] -> class name: product-item__title]] expected [true] but found [false]
+              <![CDATA[java.lang.AssertionError: Search result title does not contain 'iPhone 15': Apple iPhone 13,128GB, Starlight expected [true] but found [false]
 at org.testng.Assert.fail(Assert.java:111)
 at org.testng.Assert.failNotEquals(Assert.java:1590)
 at org.testng.Assert.assertEqualsImpl(Assert.java:150)
@@ -81,42 +81,42 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySearchResultsAccuracy -->
-        <test-method signature="productDetailPageAccuracy()[pri:4, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:32 GMT+03:00" name="productDetailPageAccuracy" finished-at="2025-06-19T23:54:35 GMT+03:00" duration-ms="2588" status="PASS">
+        <test-method signature="productDetailPageAccuracy()[pri:4, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:25 GMT+03:00" name="productDetailPageAccuracy" finished-at="2025-06-22T14:40:28 GMT+03:00" duration-ms="2611" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- productDetailPageAccuracy -->
-        <test-method signature="addProductToTheCart()[pri:5, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:35 GMT+03:00" name="addProductToTheCart" finished-at="2025-06-19T23:54:41 GMT+03:00" duration-ms="6367" status="PASS">
+        <test-method signature="addProductToTheCart()[pri:5, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:28 GMT+03:00" name="addProductToTheCart" finished-at="2025-06-22T14:40:32 GMT+03:00" duration-ms="4250" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addProductToTheCart -->
-        <test-method signature="shoppingCartReview()[pri:6, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:41 GMT+03:00" name="shoppingCartReview" finished-at="2025-06-19T23:54:45 GMT+03:00" duration-ms="4309" status="PASS">
+        <test-method signature="shoppingCartReview()[pri:6, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:32 GMT+03:00" name="shoppingCartReview" finished-at="2025-06-22T14:40:36 GMT+03:00" duration-ms="3746" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- shoppingCartReview -->
-        <test-method signature="promotionsPageAccessibility()[pri:7, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:45 GMT+03:00" name="promotionsPageAccessibility" finished-at="2025-06-19T23:54:48 GMT+03:00" duration-ms="2637" status="PASS">
+        <test-method signature="promotionsPageAccessibility()[pri:7, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:36 GMT+03:00" name="promotionsPageAccessibility" finished-at="2025-06-22T14:40:38 GMT+03:00" duration-ms="2221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- promotionsPageAccessibility -->
-        <test-method signature="contactInformationAvailability()[pri:8, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:48 GMT+03:00" name="contactInformationAvailability" finished-at="2025-06-19T23:54:48 GMT+03:00" duration-ms="130" status="PASS">
+        <test-method signature="contactInformationAvailability()[pri:8, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:38 GMT+03:00" name="contactInformationAvailability" finished-at="2025-06-22T14:40:38 GMT+03:00" duration-ms="235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- contactInformationAvailability -->
-        <test-method signature="UserLoginFunctionality()[pri:10, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:48 GMT+03:00" name="UserLoginFunctionality" finished-at="2025-06-19T23:54:57 GMT+03:00" duration-ms="9460" status="PASS">
+        <test-method signature="UserLoginFunctionality()[pri:10, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:38 GMT+03:00" name="UserLoginFunctionality" finished-at="2025-06-22T14:40:46 GMT+03:00" duration-ms="7909" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- UserLoginFunctionality -->
-        <test-method signature="InvalidUserLoginFunctionality()[pri:11, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:54:57 GMT+03:00" name="InvalidUserLoginFunctionality" finished-at="2025-06-19T23:55:02 GMT+03:00" duration-ms="4967" status="PASS">
+        <test-method signature="InvalidUserLoginFunctionality()[pri:11, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:46 GMT+03:00" name="InvalidUserLoginFunctionality" finished-at="2025-06-22T14:40:51 GMT+03:00" duration-ms="4893" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- InvalidUserLoginFunctionality -->
-        <test-method signature="SocialMediaLinks()[pri:12, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:55:02 GMT+03:00" name="SocialMediaLinks" finished-at="2025-06-19T23:55:08 GMT+03:00" duration-ms="5498" status="PASS">
+        <test-method signature="SocialMediaLinks()[pri:12, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:51 GMT+03:00" name="SocialMediaLinks" finished-at="2025-06-22T14:40:53 GMT+03:00" duration-ms="2497" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- SocialMediaLinks -->
-        <test-method is-config="true" signature="endTest()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-19T23:55:08 GMT+03:00" name="endTest" finished-at="2025-06-19T23:55:08 GMT+03:00" duration-ms="276" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:SmartBuyProject.SmartBuyProject.AppTest@58ffcbd7]" started-at="2025-06-22T14:40:53 GMT+03:00" name="tearDown" finished-at="2025-06-22T14:40:54 GMT+03:00" duration-ms="589" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endTest -->
+        </test-method> <!-- tearDown -->
       </class> <!-- SmartBuyProject.SmartBuyProject.AppTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
